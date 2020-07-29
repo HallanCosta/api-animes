@@ -5,7 +5,7 @@ const routes = express.Router();
 
 const animesController = new AnimesController;
 
-routes.get('/', animesController.lastReleases);
-routes.get('/episodio', animesController.lastReleasesCreateVideo);
+routes.get('/', animesController.listAnimesLastEntries);
+routes.get('/episodio', animesController.listEpisodeLastEntries);
 
 export default routes;
