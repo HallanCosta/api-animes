@@ -1,6 +1,7 @@
 import animesRequest from '../../services/animeflvbr';
 import cheerio from 'cheerio';
-import animesSection from './animesSection';
+import animesSection from '../animesSection';
+import paginationAnimes from '../paginationAnimes';
 
 async function animesCommons() {
   const animes = await animesSection('/', 0);
@@ -16,14 +17,15 @@ async function animesCommons() {
 async function lastEntriesEpisodes(page: number) {
   const body = page == 1 ? await animesRequest.get('/') : await animesRequest.get(`page/${page}`);
 
-  const $ = cheerio.load(body.data);
+  const htmlBody = body.data;
+  const $ = cheerio.load(htmlBody);
 
   const idEpisode: string[] = [];
   const imagesAttributes: object[] = [];
   const datas: string[] = [];
   const episodesNumbers: string[] = [];
   const episodesTitles: string[] = [];
-  const paginationNumbers: string[] = [];
+  const paginationNumbers = await paginationAnimes(htmlBody);
 
   $('.postEP').each(function(i: number, element) {
     idEpisode[i] = $(element).find('a')[0].attribs.href.split('/')[4];
@@ -39,10 +41,6 @@ async function lastEntriesEpisodes(page: number) {
     episodesNumbers[i] = $(element).find('.info').find('.Ep').text();
     
     episodesTitles[i] = $(element).find('.info').find('.title').text();
-  });
-
-  $('.pagination').find('a').each(function(i: number, element) {
-    paginationNumbers[i] = $(element)[0].attribs.href.split('/')[4];
   });
 
   return {

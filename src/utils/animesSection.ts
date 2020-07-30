@@ -1,4 +1,4 @@
-import animesRequest from '../../services/animeflvbr';
+import animesRequest from '../services/animeflvbr';
 import cheerio from 'cheerio';
 
 export default async function(urlParams:string, section: number) {
