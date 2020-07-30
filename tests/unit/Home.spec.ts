@@ -6,16 +6,18 @@ describe('Home', () => {
       
     // console.log(testAnimesCommons);
 
+    expect(testAnimesCommons).toHaveProperty('info');
     expect(testAnimesCommons).toHaveProperty('idAnimes');
     expect(testAnimesCommons).toHaveProperty('imagesAttributes');
     expect(testAnimesCommons).toHaveProperty('title');
   });
 
   it('should be able to list the last entries episodes', async () => {
-    const testLastEntriesEpisodes = await lastEntriesEpisodes();
+    const testLastEntriesEpisodes = await lastEntriesEpisodes(1);
 
     // console.log(testLastEntriesEpisodes);
 
+    expect(testLastEntriesEpisodes).toHaveProperty('info');
     expect(testLastEntriesEpisodes).toHaveProperty('idEpisode');
     expect(testLastEntriesEpisodes).toHaveProperty('imagesAttributes');
     expect(testLastEntriesEpisodes).toHaveProperty('datas');
@@ -28,6 +30,7 @@ describe('Home', () => {
 
     // console.log(testAnimesList);
 
+    expect(testAnimesList).toHaveProperty('info');
     expect(testAnimesList).toHaveProperty('idAnimes');
     expect(testAnimesList).toHaveProperty('imagesAttributes');
     expect(testAnimesList).toHaveProperty('title');
