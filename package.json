@@ -4,7 +4,7 @@
   "description": "API crawler - animesorion.vip",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --ignore-watch node_modules src/server.ts",
+    "dev": "tsnd --respawn --ignore-watch node_modules src/server.ts",
     "test": "jest",
     "test-clear": "jest --clearCache",
     "test-preset": "npx envinfo --preset jest"

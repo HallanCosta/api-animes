@@ -19,9 +19,20 @@ async function watchEpisode(idEpisode: string) {
   const match2 = text.match(regExFileWebsite)![1];
   const fileSD = match1.split(regExFileFilter);
   const fileHD = match2.split(regExFileFilter);
+  const convertFileSD = fileSD[1];
+
+
   const title: string = $('.nameEp').find('h3').text();
   const episodeNumber: string = $('.nameEp').find('p').text().split(' ')[1];
   const episodeDescription: string = $('.descEP').text().split(':')[1].trim();
+
+  // console.log(convertFileSD.split("'").trim());
+  // console.log(fileHD.split("'"));
+  /*
+  TIRAR ESPAÇOS E VIRGULAS DE DENTRO /\
+  PROVAVELMENTE TERA QUE PASSSAR PARA UMA VARIÁVEL
+  COM O VALOR DO fileSD[1] direto praticamneto...
+  */
 
   return {
     sd: fileSD[1],
