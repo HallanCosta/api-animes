@@ -3,8 +3,8 @@ import cheerio from 'cheerio';
 import animesSection from '../animesSection';
 import paginationAnimes from '../paginationAnimes';
 
-async function listAnimesFinded(search: string) {
-  const urlParam = '?s=';
+async function listAnimesFinded(search: string, page: number) {
+  const urlParam = page == 1 ? '?s=' : `page/${page}?s=`;
 
   const animes = await animesSection(`${urlParam}${search.replace(/ /g, '+')}`, 0);
   
