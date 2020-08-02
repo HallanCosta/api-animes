@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import cheerio from 'cheerio';
 import { animesCommons, lastEntriesEpisodes, animesList } from '../utils/Home';
 
-class AnimesController {
+class HomeController {
 
   async index(request: Request, response: Response) {
     const { page = 1 } = request.body;
@@ -17,9 +17,8 @@ class AnimesController {
       listAnimes
     });
   }
-  
 
 }
 
-export default AnimesController;
+export default HomeController;
 
