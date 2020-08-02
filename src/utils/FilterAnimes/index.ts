@@ -10,7 +10,7 @@ async function listAZ() {
   const idFilterAlphabet: string[] = [];
   const textFilterAlphabet: string[] = [];
   $('.filtroAZ').find('a').each(function(i: number, element) {
-    idFilterAlphabet[i] = $(element)[0].attribs.href.split('/')[3];
+    idFilterAlphabet[i] = $(element)[0].attribs.href.split('?')[1];
     textFilterAlphabet[i] = $(element).find('li').text();
   });
 
