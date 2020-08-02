@@ -1,13 +1,15 @@
-import animesSection from '../animesSection';
 import animesRequest from '../../services/animeflvbr';
 import cheerio from 'cheerio';
+import animesSection from '../animesSection';
 import paginationAnimes from '../paginationAnimes';
 
 async function listAnimesFinded(search: string) {
-  const animes = await animesSection(search, 0);
+  const urlParam = '?s=';
+
+  const animes = await animesSection(`${urlParam}${search.replace(/ /g, '+')}`, 0);
   
-  const body = await animesRequest.get(search);
-  const paginationNumbers = await paginationAnimes(body.data);
+  const body = await animesRequest.get(`${urlParam}${search}`);
+  const paginationNumbers = await paginationAnimes(body.data, 4);
 
   return {
     info: "ANIMES ENCONTRADOS",

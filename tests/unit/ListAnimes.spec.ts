@@ -1,8 +1,8 @@
-import listAnimesFinded from '../../src/utils/ListAnimesFinded';
+import listAnimes from '../../src/utils/ListAnimes';
 
-describe('listAnimesFinded', () => {
-  it('should be able to list animes finded', async () => {
-    const animes = await listAnimesFinded('Mahou shoujo site');
+describe('ListAnimes', () => {
+  it('should be able list animes', async () => {
+    const animes = await listAnimes();
 
     // console.log(animes);
 
@@ -10,5 +10,6 @@ describe('listAnimesFinded', () => {
     expect(animes).toHaveProperty('idAnimes');
     expect(animes).toHaveProperty('imagesAttributes');
     expect(animes).toHaveProperty('title');
+    expect(animes).toHaveProperty('paginationNumbers');
   });
 })

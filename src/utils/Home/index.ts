@@ -25,7 +25,7 @@ async function lastEntriesEpisodes(page: number) {
   const datas: string[] = [];
   const episodesNumbers: string[] = [];
   const episodesTitles: string[] = [];
-  const paginationNumbers = await paginationAnimes(htmlBody);
+  const paginationNumbers = await paginationAnimes(htmlBody, 4);
 
   $('.postEP').each(function(i: number, element) {
     idEpisode[i] = $(element).find('a')[0].attribs.href.split('/')[4];

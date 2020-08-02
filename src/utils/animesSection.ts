@@ -1,7 +1,7 @@
 import animesRequest from '../services/animeflvbr';
 import cheerio from 'cheerio';
 
-export default async function(urlParams:string, section: number) {
+export default async function(urlParams: string, section: number) {
 
   const body = await animesRequest.get(urlParams);
 

@@ -1,7 +1,7 @@
 import animesRequest from '../../services/animeflvbr';
 import cheerio from 'cheerio';
 
-export default async function listEpisodeAnime(idAnime: string) {
+async function listEpisodeAnime(idAnime: string) {
   const body = await animesRequest.get(`/anime/${idAnime}`);
   
   const $ = cheerio.load(body.data);
@@ -45,3 +45,5 @@ export default async function listEpisodeAnime(idAnime: string) {
     idEpisode
   };
 }
+
+export default listEpisodeAnime;
