@@ -5,7 +5,9 @@ import listAllAnimes from '../utils/ListAnimes';
 class AnimesListController {
 
   async index(request: Request, response: Response) {
-    const animesList = await listAllAnimes();
+    const { page = 1 } = request.params;
+    
+    const animesList = await listAllAnimes(Number(page));
 
     return response.json(animesList);
   }

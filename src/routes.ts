@@ -15,5 +15,6 @@ routes.get('/page/:page', homeController.index);
 routes.get('/video/:idEpisode', episodesController.show);
 
 routes.get('/lista', animesListController.index);
+routes.get('/lista/page/:page', animesListController.index);
 
 export default routes;

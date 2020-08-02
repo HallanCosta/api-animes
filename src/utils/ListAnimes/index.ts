@@ -3,8 +3,8 @@ import cheerio from 'cheerio';
 import animesSection from '../animesSection';
 import paginationAnimes from '../paginationAnimes';
 
-async function listAnimes() {
-  const urlParam = '/lista';
+async function listAnimes(page: number) {
+  const urlParam = page == 1 ? '/lista' : `lista/page/${page}`;
   const animes = await animesSection(urlParam, 0);
   
   const body = await animesRequest.get(urlParam);
