@@ -9,6 +9,8 @@ const episodesController = new EpisodesController;
 
 routes.get('/', animesController.index);
 routes.get('/page/:page', animesController.index);
+routes.get('/page/:page', animesController.index);
+
 routes.get('/video/:idEpisode', episodesController.show);
 
 export default routes;
