@@ -17,8 +17,8 @@ routes.get('/page/:page', homeController.index);
 routes.get('/lista', animesListController.index);
 routes.get('/lista/page/:page', animesListController.index);
 
-routes.get('/search', animesFindedController.index);
-routes.get('/search/page/:page', animesFindedController.index);
+routes.get('/search/:search', animesFindedController.index);
+routes.get('/search/:search/page/:page', animesFindedController.index);
 
 routes.get('/anime/:idAnime', episodesController.index);
 routes.get('/video/:idEpisode', episodesController.show);
