@@ -1,13 +1,14 @@
 {
   "name": "api-anime",
   "version": "1.0.0",
-  "description": "API crawler - animesorion.vip",
+  "description": "API crawler - animeflvbr.com",
   "main": "index.js",
   "scripts": {
     "dev": "tsnd --respawn --ignore-watch node_modules src/server.ts",
     "test": "jest",
     "test-clear": "jest --clearCache",
-    "test-preset": "npx envinfo --preset jest"
+    "test-preset": "npx envinfo --preset jest",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "HallanCosta",
