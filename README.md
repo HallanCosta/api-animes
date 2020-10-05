@@ -91,6 +91,6 @@ A rota **Episódio do anime para assistir** será retornado um json com os video
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/HigorSnt/proffy/blob/master/LICENSE.md) para mais detalhes.
 
 ## :computer: Desenvolvimento
-| Author | Contribuidor |
-|--|--|
-| [<img src="https://avatars2.githubusercontent.com/u/60573155?s=115&v=3"><br><sub>@HallanCosta</sub>](https://github.com/HallanCosta) | [<img src="https://avatars0.githubusercontent.com/u/28929274?s=115&v=3"><br><sub>@Rocketseat</sub>](https://github.com/rocketseat) |
+| Author |
+|--|
+| [<img src="https://avatars2.githubusercontent.com/u/60573155?s=115&v=3"><br><sub>@HallanCosta</sub>](https://github.com/HallanCosta) |
